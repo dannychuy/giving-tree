@@ -1,0 +1,42 @@
+.board {
+	position: fixed;
+    height: 300px;
+    width: 530px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 0 5px 0 grey;
+    z-index: 1;
+}
+
+input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 25px;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+
+li {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	/*text-decoration: none;*/
+}
+
+li:hover {
+	background-color: #111111;
+}
