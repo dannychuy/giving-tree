@@ -9,12 +9,18 @@ class MessageBoard extends React.Component {
 	    this.enterPressed = this.enterPressed.bind(this);
 	    this.createMessage = this.createMessage.bind(this);
 
-	    if(localStorage.getItem("savedMessages")==null){
-			localStorage.savedMessages = JSON.stringify(["Good", "Gooder"]);
-		};
-		this.state = {
-	    	"messages": JSON.parse(localStorage.getItem("savedMessages"))
-	    };
+       	if (typeof window !== 'undefined') {
+			if(localStorage.getItem("savedMessages")==null){
+				localStorage.savedMessages = JSON.stringify(["Good", "Gooder"]);
+			};
+			this.state = {
+		    	"messages": JSON.parse(localStorage.getItem("savedMessages"))
+		    };
+		} else {
+			this.state = {
+		    	"messages": ["Goodiest"]
+		    };
+		}
 
 	    console.log(this.state.messages);
 	}
@@ -24,7 +30,9 @@ class MessageBoard extends React.Component {
 	    if(code === 13 && event.target.value !== '') { //13 is the enter keycode
 	        this.state.messages.unshift(event.target.value);
 	    	this.setState({"messages": this.state.messages});
-	    	// localStorage.savedMessages = JSON.stringify(this.state.messages); 
+	   //  	if (typeof window !== 'undefined') {
+				// localStorage.savedMessages = JSON.stringify(this.state.messages); 
+	   //  	}
 	    	event.target.value = '';
 	    } 
 	}
