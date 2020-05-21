@@ -1,11 +1,13 @@
 .screen {
 	position: absolute;
-    top: 100%;
+    top: 105%;
     left: 50%;
     transform: translate(-50%, 0);
     height: 300px;
     width: 500px;
     /*border: 5px solid black;*/
+    background-color: #AEC6CF;
+    border-radius: 5px;
 }
 
 .center {
@@ -15,4 +17,23 @@
 	left: 50%;
 	bottom: 0%;
     transform: translate(-50%, 0);
+}
+
+.stage, .rain {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+}
+
+.stage {
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  background: white;
+}
+
+.rain {
+  left: 0;
+  top: 0;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/314556/rainSeamless.png");
 }
